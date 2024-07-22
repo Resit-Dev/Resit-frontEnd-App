@@ -18,7 +18,7 @@ const ThirdPage = () => {
       </View>
         <View style={styles.btnContainer}>
         <Link href=''></Link>
-        <Link href='../'style={styles.linkText}>Get Started</Link>
+        <Link href="../(auth)/SiginIn/page" style={styles.linkText}>Get Started</Link>
       </View>
     </View>
   )
