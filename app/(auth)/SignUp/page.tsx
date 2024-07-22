@@ -9,8 +9,10 @@ import {
   TextInput,
   View,
   Image,
+  ScrollView,
 } from "react-native";
-import CheckBox from "@react-native-community/checkbox";
+// import CheckBox from "@react-native-community/checkbox";
+
 
 const page = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +23,7 @@ const page = () => {
 
   const navigation = useNavigation();
   return (
-    <View style={{ flex: 1, backgroundColor: "white" }}>
+    <ScrollView style={{ flex: 1, backgroundColor: "white" }}>
       <KeyboardAvoidingView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
       >
@@ -206,7 +208,7 @@ const page = () => {
             <Text style={{ color: "black", fontSize: 15, fontWeight: "400" }}>
             Already have account,{" "}
               <Link
-                href="../SignIn/page"
+                href='../SiginIn/page'
                 style={{ color: "#017CFD", fontWeight: "500" }}
               >
                 Sign In
@@ -215,7 +217,7 @@ const page = () => {
           </Pressable>
         </View>
       </KeyboardAvoidingView>
-    </View>
+    </ScrollView>
   );
 };
 
