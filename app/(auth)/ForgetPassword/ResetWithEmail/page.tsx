@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Link } from 'expo-router';
 
 const VerifyCodePage = () => {
@@ -54,6 +54,7 @@ const VerifyCodePage = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar />
       <Link href='../page'>
         <Text style={styles.backButton}>Back to Forget Password</Text>
       </Link>

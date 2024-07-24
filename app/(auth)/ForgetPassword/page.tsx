@@ -5,6 +5,7 @@ import {
   Text,
   Pressable,
   StyleSheet,
+  StatusBar,
 } from "react-native";
 
 const page = () => {
@@ -26,6 +27,7 @@ const page = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
+      <StatusBar />
       <View
         style={{
           justifyContent: "center",
