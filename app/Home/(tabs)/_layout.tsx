@@ -1,22 +1,28 @@
+import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
+import { StyleSheet, View, Text } from 'react-native';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'blue',
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: styles.tabBar,
+        tabBarLabelStyle: styles.tabBarLabel,
         headerShown: false,
       }}
     >
-    
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <Entypo name="home" size={focused ? 32 : 28} color={color} />
+            <View style={focused ? styles.activeTab : null}>
+              <Entypo name="home" size={focused ? 32 : 25} color={color} />
+            </View>
           ),
         }}
       />
@@ -26,11 +32,13 @@ export default function TabLayout() {
         options={{
           title: 'Map',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome
-              size={focused ? 32 : 28} 
-              name="map"
-              color={color}
-            />
+            <View style={focused ? styles.activeTab : null}>
+              <FontAwesome
+                size={focused ? 32 : 25}
+                name="map"
+                color={color}
+              />
+            </View>
           ),
         }}
       />
@@ -40,11 +48,13 @@ export default function TabLayout() {
         options={{
           title: 'Invest',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome
-              size={focused ? 32 : 28} 
-              name="dollar" 
-              color={color}
-            />
+            <View style={focused ? styles.activeTab : null}>
+              <FontAwesome
+                size={focused ? 32 : 25}
+                name="dollar"
+                color={color}
+              />
+            </View>
           ),
         }}
       />
@@ -54,11 +64,13 @@ export default function TabLayout() {
         options={{
           title: 'Message',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome
-              size={focused ? 32 : 28} 
-              name="envelope" 
-              color={color}
-            />
+            <View style={focused ? styles.activeTab : null}>
+              <FontAwesome
+                size={focused ? 32 : 25}
+                name="envelope"
+                color={color}
+              />
+            </View>
           ),
         }}
       />
@@ -68,15 +80,36 @@ export default function TabLayout() {
         options={{
           title: 'More',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome
-              size={focused ? 32 : 28} 
-              name="list"
-              color={color}
-            />
+            <View style={focused ? styles.activeTab : null}>
+              <FontAwesome
+                size={focused ? 32 : 25}
+                name="list"
+                color={color}
+              />
+            </View>
           ),
         }}
       />
-      
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    backgroundColor: 'black',
+    height: 60,
+    paddingBottom: 10,
+    paddingTop: 10,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 18,
+  },
+  tabBarLabel: {
+    fontSize: 12,
+  },
+  activeTab: {
+    backgroundColor: '#00008B',
+    padding: 10,
+    borderRadius: 50,
+    marginTop: -20,
+  },
+});
