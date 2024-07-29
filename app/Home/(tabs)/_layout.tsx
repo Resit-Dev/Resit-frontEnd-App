@@ -10,8 +10,8 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: 'gray',
-        tabBarStyle: styles.tabBar,
-        tabBarLabelStyle: styles.tabBarLabel,
+        // tabBarStyle: styles.tabBar,
+        // tabBarLabelStyle: styles.tabBarLabel,
         headerShown: false,
       }}
     >
@@ -20,9 +20,13 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <View style={focused ? styles.activeTab : null}>
-              <Entypo name="home" size={focused ? 32 : 25} color={color} />
-            </View>
+            // <View style={focused ? styles.activeTab : null}>
+              <View>
+              <Entypo name="home" size={focused ? 32 : 25}
+              //  color={color} 
+               />
+              </View>
+            // </View>
           ),
         }}
       />
@@ -32,11 +36,12 @@ export default function TabLayout() {
         options={{
           title: 'Map',
           tabBarIcon: ({ color, focused }) => (
-            <View style={focused ? styles.activeTab : null}>
-              <FontAwesome
+            // <View style={focused ? styles.activeTab : null}>
+              <View>
+            <FontAwesome
                 size={focused ? 32 : 25}
                 name="map"
-                color={color}
+                // color={color}
               />
             </View>
           ),
@@ -48,11 +53,12 @@ export default function TabLayout() {
         options={{
           title: 'Invest',
           tabBarIcon: ({ color, focused }) => (
-            <View style={focused ? styles.activeTab : null}>
-              <FontAwesome
+            // <View style={focused ? styles.activeTab : null}>
+            <View>
+            <FontAwesome
                 size={focused ? 32 : 25}
                 name="dollar"
-                color={color}
+                // color={color}
               />
             </View>
           ),
@@ -64,11 +70,12 @@ export default function TabLayout() {
         options={{
           title: 'Message',
           tabBarIcon: ({ color, focused }) => (
-            <View style={focused ? styles.activeTab : null}>
-              <FontAwesome
+            // <View style={focused ? styles.activeTab : null}>
+            <View>
+            <FontAwesome
                 size={focused ? 32 : 25}
                 name="envelope"
-                color={color}
+                // color={color}
               />
             </View>
           ),
@@ -80,11 +87,12 @@ export default function TabLayout() {
         options={{
           title: 'More',
           tabBarIcon: ({ color, focused }) => (
-            <View style={focused ? styles.activeTab : null}>
+            // <View style={focused ? styles.activeTab : null}>
+            <View>
               <FontAwesome
                 size={focused ? 32 : 25}
                 name="list"
-                color={color}
+                // color={color}
               />
             </View>
           ),
@@ -95,21 +103,21 @@ export default function TabLayout() {
 }
 
 const styles = StyleSheet.create({
-  tabBar: {
-    backgroundColor: 'black',
-    height: 60,
-    paddingBottom: 10,
-    paddingTop: 10,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 18,
-  },
-  tabBarLabel: {
-    fontSize: 12,
-  },
-  activeTab: {
-    backgroundColor: '#00008B',
-    padding: 10,
-    borderRadius: 50,
-    marginTop: -20,
-  },
+  // tabBar: {
+  //   backgroundColor: 'black',
+  //   height: 60,
+  //   paddingBottom: 10,
+  //   paddingTop: 10,
+  //   borderTopRightRadius: 20,
+  //   borderTopLeftRadius: 18,
+  // },
+  // tabBarLabel: {
+  //   fontSize: 12,
+  // },
+  // activeTab: {
+  //   backgroundColor: '#00008B',
+  //   padding: 10,
+  //   borderRadius: 50,
+  //   marginTop: -20,
+  // },
 });

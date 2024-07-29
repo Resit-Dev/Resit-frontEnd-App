@@ -53,7 +53,7 @@ const VerifyCodePage = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {paddingTop: 30}]}>
       <StatusBar />
       <Link href='../page'>
         <Text style={styles.backButton}>Back to Forget Password</Text>

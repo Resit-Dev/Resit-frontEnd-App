@@ -22,7 +22,7 @@ const page = () => {
 
   const navigation = useNavigation();
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "white" }}>
+    <ScrollView style={{ flex: 1, backgroundColor: "white", paddingTop: 30 }}>
       <StatusBar />
       <KeyboardAvoidingView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}

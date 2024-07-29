@@ -5,7 +5,7 @@ import {
   KeyboardAvoidingView,
   Pressable,
   StyleSheet,
-  Text,
+  Text, 
   TextInput,
   View,
   Image,
@@ -23,7 +23,7 @@ const page = () => {
 
   const navigation = useNavigation();
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "white" }}>
+    <ScrollView style={{ flex: 1, backgroundColor: "white", paddingTop: 30}}>
       <KeyboardAvoidingView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
       >
