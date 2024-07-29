@@ -26,7 +26,7 @@ const page = () => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "white" }}>
+    <View style={{ flex: 1, backgroundColor: "white" , paddingTop: 30}}>
       <StatusBar />
       <View
         style={{
