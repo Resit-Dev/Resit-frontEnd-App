@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
 
+
 const FirstPage = () => {
   return (
     <View style={styles.container}>
@@ -17,7 +18,7 @@ const FirstPage = () => {
           <Image source={require('../../assets/images/Group1.png')}/>
       </View>
       <View style={styles.btnContainer}>
-        <Link href='' style={[styles.linkText, {backgroundColor: 'none', borderColor: "#0F315E", borderWidth:1, color:"#0F315E",}]}>Skip</Link>
+        <Link href='../(auth)/SiginIn/page' style={[styles.linkText, {backgroundColor: 'none', borderColor: "#0F315E", borderWidth:1, color:"#0F315E",}]}>Skip</Link>
         <Link href='../pages/OnBoardingOne'style={styles.linkText}>Next</Link>
       </View>
     </View>

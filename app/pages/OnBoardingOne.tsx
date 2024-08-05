@@ -17,7 +17,7 @@ const SecondPage = () => {
           <Image source={require('../../assets/images/Group2.png')}/>
       </View>
         <View style={styles.btnContainer}>
-          <Link href=''  style={[styles.linkText, {backgroundColor: 'none', borderColor: "#0F315E", borderWidth:1, color:"#0F315E",}]}>Skip</Link>
+          <Link href='../(auth)/SiginIn/page'  style={[styles.linkText, {backgroundColor: 'none', borderColor: "#0F315E", borderWidth:1, color:"#0F315E",}]}>Skip</Link>
           <Link href='./OnBoardingTwo' style={styles.linkText}>Next</Link>
         </View>
     </View>

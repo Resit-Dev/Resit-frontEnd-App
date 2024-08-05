@@ -17,7 +17,7 @@ const ThirdPage = () => {
           <Image source={require('../../assets/images/Group3.png')}/>
       </View>
         <View style={styles.btnContainer}>
-        <Link href=''></Link>
+        <Link href='../(auth)/SiginIn/page'></Link>
         <Link href="../(auth)/SiginIn/page" style={styles.linkText}>Get Started</Link>
       </View>
     </View>

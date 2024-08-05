@@ -54,5 +54,37 @@ export const HouseSliderData = [
     },
   ]
   
-  // const 
+  export const LandData = [
+    {
+        Landimage: require('../assets/images/landImgs.png'),
+        LandLabel: 'Apple Estate',
+        Landlocation: '20 Acres of Land, Lagos State',
+      },
+    {
+      Landimage: require('../assets/images/landImg.png'),
+      LandLabel: 'Orange Estate',
+      Landlocation: '10 Acres of Land, Oyo State',
+    },
+    {
+      Landimage: require('../assets/images/landImg.png'),
+      LandLabel: 'Orange Estate',
+      Landlocation: '10 Acres of Land, Oyo State',
+    },
+      {
+          Landimage: require('../assets/images/landImgs.png'),
+          LandLabel: 'Apple Estate',
+          Landlocation: '20 Acres of Land, Lagos State',
+        },
+        {
+            Landimage: require('../assets/images/landImgs.png'),
+            LandLabel: 'Apple Estate',
+            Landlocation: '20 Acres of Land, Lagos State',
+          },
+        {
+          Landimage: require('../assets/images/landImg.png'),
+          LandLabel: 'Orange Estate',
+          Landlocation: '10 Acres of Land, Oyo State',
+        },
+  ];
+  
   

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, StatusBar, SafeAreaView } from 'react-native';
 import { Link } from 'expo-router';
 
 const VerifyCodePage = () => {
@@ -53,7 +53,7 @@ const VerifyCodePage = () => {
   };
 
   return (
-    <View style={[styles.container, {paddingTop: 30}]}>
+    <SafeAreaView style={[styles.container, {paddingTop: 30}]}>
       <StatusBar />
       <Link href='../page'>
         <Text style={styles.backButton}>Back to Forget Password</Text>
@@ -87,7 +87,7 @@ const VerifyCodePage = () => {
       <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
         <Text style={styles.continueButtonText}>Continue</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 

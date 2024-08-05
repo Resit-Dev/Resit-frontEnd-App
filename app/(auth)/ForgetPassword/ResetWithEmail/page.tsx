@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, StatusBar, SafeAreaView } from 'react-native';
 import { Link } from 'expo-router';
 
 const VerifyCodePage = () => {
@@ -39,7 +39,6 @@ const VerifyCodePage = () => {
   const handleContinue = () => {
     if (code.every((digit) => digit !== '')) {
       Alert.alert('Success', 'Code verified successfully');
-      // Navigate to the next page
     } else {
       Alert.alert('Error', 'Please enter the complete code');
     }
@@ -48,12 +47,11 @@ const VerifyCodePage = () => {
   const handleResendCode = () => {
     if (timer === 0) {
       setTimer(60);
-      // Resend code logic
     }
   };
 
   return (
-    <View style={[styles.container, {paddingTop: 30}]}>
+    <SafeAreaView style={[styles.container, {paddingTop: 30}]}>
       <StatusBar />
       <Link href='../page'>
         <Text style={styles.backButton}>Back to Forget Password</Text>
@@ -87,7 +85,7 @@ const VerifyCodePage = () => {
         <Link href='../CreateNewPass/page' style={styles.continueButton} onPress={handleContinue}>
         <Text style={styles.continueButtonText}>Continue</Text>
         </Link>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -5,6 +5,7 @@ import {
   Text,
   Pressable,
   StyleSheet,
+  SafeAreaView,
   StatusBar,
 } from "react-native";
 
@@ -26,7 +27,7 @@ const page = () => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "white" , paddingTop: 30}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "white" , paddingTop: 30}}>
       <StatusBar />
       <View
         style={{
@@ -39,7 +40,7 @@ const page = () => {
           <Text style={{ color: "#0F315E", fontSize: 20, fontWeight: "600", textAlign: 'center' }}>
             Forget Password
           </Text>
-          <Text style={{ fontSize: 17, fontWeight: "600", marginTop: 15, textAlign: "center" }}>
+          <Text style={{ fontSize: 17, fontWeight: "600", marginTop: 15, marginHorizontal:30, textAlign: "center" }}>
             Select which method we should use to reset your password
           </Text>
         </View>
@@ -65,7 +66,7 @@ const page = () => {
         </Link>
           </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

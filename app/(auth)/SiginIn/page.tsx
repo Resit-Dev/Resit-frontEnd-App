@@ -1,4 +1,4 @@
-import { Link, useNavigation } from "expo-router";
+import { Link, router, useNavigation } from "expo-router";
 import React, { useState } from "react";
 import {
   Alert,
@@ -10,31 +10,37 @@ import {
   View,
   Image,
   ScrollView,
+  SafeAreaView,
   StatusBar,
+  TouchableHighlight,
+  Modal,
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 
-
-const page = () => {
+const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const navigation = useNavigation();
+
+  const handleSignIn = () => {
+    if (email === "" || password === "") {
+      setModalVisible(true);
+    } else {
+      router.push("../../Home");
+    }
+  };
+
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "white", paddingTop: 30 }}>
-      <StatusBar />
+    <SafeAreaView style={{ flex: 1, backgroundColor: "white", paddingTop: 30 }}>
+      {/* <View style={{backgroundColor: '#00000099', width: "100%", height: '100%', flex: 1, zIndex: 999}}> */}
       <KeyboardAvoidingView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
       >
-        <View
-          style={{
-            justifyContent: "center",
-
-            alignItems: "center",
-          }}
-        >
+        <View style={{ justifyContent: "center", alignItems: "center" }}>
           <Text style={{ color: "#0F315E", fontSize: 20, fontWeight: "600" }}>
             Sign In
           </Text>
@@ -58,7 +64,7 @@ const page = () => {
                 width: "100%",
                 marginTop: 10,
                 marginVertical: 10,
-                fontSize: email ? 15 : 15,
+                fontSize: 15,
                 backgroundColor: "#F4F4F4",
               }}
             />
@@ -86,7 +92,7 @@ const page = () => {
                 width: "100%",
                 marginTop: 10,
                 marginVertical: 10,
-                fontSize: email ? 15 : 15,
+                fontSize: 15,
                 backgroundColor: "#F4F4F4",
               }}
             />
@@ -101,27 +107,17 @@ const page = () => {
             }}
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              {/* <CheckBox
-                disabled={false}
-                value={toggleCheckBox}
-                onValueChange={(newValue) => setToggleCheckBox(newValue)}
-              /> */}
               <Text style={{ marginLeft: 10 }}>Remember Me</Text>
             </View>
-            <Pressable
-            // onPress={() => navigation.navigate('ForgotPassword')}
-            >
-              <Link
-                href="../ForgetPassword/page"
-                style={{ color: "#017CFD" }}
-              >
+            <Pressable>
+              <Link href="../ForgetPassword/page" style={{ color: "#017CFD" }}>
                 Forgot Password?
               </Link>
             </Pressable>
           </View>
 
           <Pressable
-            // onPress={HandleLogin}
+            onPress={handleSignIn}
             style={{
               backgroundColor: "#0F315E",
               width: "100%",
@@ -133,9 +129,7 @@ const page = () => {
             }}
           >
             <Text style={{ color: "white", fontSize: 18, fontWeight: "600" }}>
-              <Link href='../../Home/(tabs)'>
               Sign In
-              </Link>
             </Text>
           </Pressable>
           <View style={{ marginTop: 20, alignItems: "center" }}>
@@ -146,9 +140,7 @@ const page = () => {
                 marginVertical: 20,
               }}
             >
-              <View
-                style={{ flex: 1, height: 1, backgroundColor: "#cccccc" }}
-              />
+              <View style={{ flex: 1, height: 1, backgroundColor: "#cccccc" }} />
               <View>
                 <Text
                   style={{
@@ -161,27 +153,29 @@ const page = () => {
                   Or Continue With
                 </Text>
               </View>
-              <View
-                style={{ flex: 1, height: 1, backgroundColor: "#cccccc" }}
-              />
+              <View style={{ flex: 1, height: 1, backgroundColor: "#cccccc" }} />
             </View>
             <View
               style={{
                 flexDirection: "row",
                 alignItems: "center",
                 marginTop: 10,
+                gap: 10,
               }}
             >
-              <Image source={require("../../../assets/images/google.png")} />
-              <Image
-                source={require("../../../assets/images/facebook.png")}
-                style={{ marginLeft: 10 }}
-              />
+              <TouchableHighlight>
+                <Image source={require("../../../assets/images/google.png")} />
+              </TouchableHighlight>
+              <TouchableHighlight>
+                <Image
+                  source={require("../../../assets/images/facebook.png")}
+                  style={{ marginLeft: 10 }}
+                />
+              </TouchableHighlight>
             </View>
           </View>
 
           <Pressable
-            //   onPress={()  => navigation.navigate("Register")}
             style={{
               width: "100%",
               height: 50,
@@ -202,10 +196,72 @@ const page = () => {
           </Pressable>
         </View>
       </KeyboardAvoidingView>
-    </ScrollView>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Kindly fill the blank space</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Close</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      {/* </View> */}
+    </SafeAreaView>
   );
 };
 
-export default page;
+export default Page;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 10,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+    borderRadius: 10,
+    paddingHorizontal: 20,
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+  },
+});

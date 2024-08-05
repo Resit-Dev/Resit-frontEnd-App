@@ -11,6 +11,7 @@ import {
   Image,
   ScrollView,
   StatusBar,
+  SafeAreaView
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 
@@ -22,7 +23,7 @@ const page = () => {
 
   const navigation = useNavigation();
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "white", paddingTop: 30 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "white", paddingTop: 30 }}>
       <StatusBar />
       <KeyboardAvoidingView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
@@ -116,7 +117,7 @@ const page = () => {
           </Pressable>
         </View>
       </KeyboardAvoidingView>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 

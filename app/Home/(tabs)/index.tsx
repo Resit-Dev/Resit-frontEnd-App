@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
   FlatList,
   ImageBackground,
+  Platform,
+  SafeAreaView
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
@@ -61,7 +63,8 @@ const Index = () => {
   );
 
   return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.container}>
+    <ScrollView>
       <StatusBar />
       <View style={styles.content}>
         <View style={styles.header}>
@@ -71,7 +74,7 @@ const Index = () => {
         </View>
 
         <View style={styles.searchContainer}>
-          <FontAwesome name="search" size={20} color="black" />
+          <FontAwesome name="search" size={20} color="black"/>
           <TextInput
             placeholder="Find your dream house"
             placeholderTextColor="#737373"
@@ -84,10 +87,11 @@ const Index = () => {
           data={data}
           renderItem={renderHouseItem}
           keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={() => <View style={{ height: 20 }} />} // Add spacing between items
+          ItemSeparatorComponent={() => <View style={{ height: 20 }} />} 
         />
 
         <Text style={styles.sectionTitle}>Featured Slider</Text>
+       <Link href='../landDetails/landDetails'>
         <FlatList
           data={sliderData}
           renderItem={renderSliderItem}
@@ -95,8 +99,9 @@ const Index = () => {
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.sliderContainer}
-          ItemSeparatorComponent={() => <View style={{ width: 10 }} />} // Add spacing between slider items
-        />
+          ItemSeparatorComponent={() => <View style={{ width: 10 }} />} 
+          />
+        </Link>
 
         <View style={styles.listingHeader}>
           <Text style={styles.listingTitle}>Sales Listing</Text>
@@ -171,6 +176,7 @@ const Index = () => {
       
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -180,9 +186,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-  },
-  content: {
-    paddingTop: 30,
   },
   header: {
     flexDirection: "row",
@@ -211,6 +214,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingLeft: 20,
     paddingBottom: 20,
+    paddingTop: Platform.OS === 'ios' ? 30 : 0,
   },
   houseContainer: {
     flexDirection: "column",
