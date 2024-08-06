@@ -1,3 +1,4 @@
+
 export const HouseData = [
     {
       image: require('../assets/images/house1.png'),
@@ -30,7 +31,7 @@ export const HouseSliderData = [
       HouseFeatures: "4-Bed Room Duplex",
       HouseLocation: 'Block B Orange Island, Lekki',
       HouseState: 'Lagos State, Nigeria',
-      stars: '',
+      stars: 'star',
       Price: '#150,000,000',
       btn: 'Buy now',
     },
@@ -39,7 +40,7 @@ export const HouseSliderData = [
       HouseFeatures: "4-Bed Room Duplex",
       HouseLocation: 'Block B Orange Island, Lekki',
       HouseState: 'Lagos State, Nigeria',
-      stars: '',
+      stars: 'star',
       Price: '#150,000,000',
       btn: 'Buy now',
     },
@@ -48,7 +49,7 @@ export const HouseSliderData = [
       HouseFeatures: "4-Bed Room Duplex",
       HouseLocation: 'Block B Orange Island, Lekki',
       HouseState: 'Lagos State, Nigeria',
-      stars: '',
+      stars: 'star',
       Price: '#150,000,000',
       btn: 'Buy now',
     },
@@ -59,32 +60,38 @@ export const HouseSliderData = [
         Landimage: require('../assets/images/landImgs.png'),
         LandLabel: 'Apple Estate',
         Landlocation: '20 Acres of Land, Lagos State',
+        LandStars: "star",
       },
     {
       Landimage: require('../assets/images/landImg.png'),
       LandLabel: 'Orange Estate',
       Landlocation: '10 Acres of Land, Oyo State',
+      LandStars: "star",
     },
     {
       Landimage: require('../assets/images/landImg.png'),
       LandLabel: 'Orange Estate',
       Landlocation: '10 Acres of Land, Oyo State',
+      LandStars: "star",
     },
+    {
+        Landimage: require('../assets/images/landImgs.png'),
+        LandLabel: 'Apple Estate',
+        Landlocation: '20 Acres of Land, Lagos State',
+        LandStars: "star",
+      },
       {
           Landimage: require('../assets/images/landImgs.png'),
           LandLabel: 'Apple Estate',
           Landlocation: '20 Acres of Land, Lagos State',
+        LandStars: "star",
         },
-        {
-            Landimage: require('../assets/images/landImgs.png'),
-            LandLabel: 'Apple Estate',
-            Landlocation: '20 Acres of Land, Lagos State',
-          },
-        {
-          Landimage: require('../assets/images/landImg.png'),
-          LandLabel: 'Orange Estate',
-          Landlocation: '10 Acres of Land, Oyo State',
-        },
+      {
+        Landimage: require('../assets/images/landImg.png'),
+        LandLabel: 'Orange Estate',
+        Landlocation: '10 Acres of Land, Oyo State',
+        LandStars: "star",
+      },
   ];
   
   

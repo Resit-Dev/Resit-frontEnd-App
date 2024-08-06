@@ -4,6 +4,9 @@ import { LandData } from '@/components/DummyData';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { Link } from 'expo-router';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Entypo from '@expo/vector-icons/Entypo';
+
 
 
 const landDetails = () => {
@@ -14,6 +17,15 @@ const landDetails = () => {
       <Image source={item.Landimage} style={styles.image} />
       <Text style={styles.label}>{item.LandLabel}</Text>
       <Text style={styles.location}>{item.Landlocation}</Text>
+      <View style={{flexDirection: 'row', paddingTop: 10}}>
+        <Text>4.9</Text>
+        <Entypo name={item.LandStars} size={15} color="#FC8A04" />
+        <Entypo name={item.LandStars} size={15} color="#FC8A04" />
+        <Entypo name={item.LandStars} size={15} color="#FC8A04" />
+        <Entypo name={item.LandStars} size={15} color="#FC8A04" />
+        <Entypo name={item.LandStars} size={15} color="#FC8A04" />
+        <Text style={{fontSize: 13}}> | 200 Reviews</Text>
+      </View>
     </View>
   );
 

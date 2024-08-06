@@ -10,7 +10,10 @@ import {
   FlatList,
   ImageBackground,
   Platform,
-  SafeAreaView
+  SafeAreaView,
+  TouchableHighlightBase,
+  TouchableHighlight,
+  Pressable
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
@@ -21,22 +24,25 @@ import {
   HouseData,
   HouseSliderData,
 } from "../../../components/DummyData";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 const Index = () => {
   const data = HouseData || [];
   const sliderData = HouseSliderData || [];
-
+  
+  const HandleDetails = () => {
+    router.push('../ProductDeatils/page');
+  }
   const renderHouseItem = ({ item }) => (
-    <View style={styles.houseContainer}>
+    <Pressable  style={styles.houseContainer} onPress={HandleDetails}>
       <Image source={item.image} style={styles.houseImg} />
       <View style={styles.houseDetails}>
         <Text style={styles.houseLabel}>{item.label}</Text>
         <Text style={styles.housePrice}>{item.price}</Text>
       </View>
       <Text style={styles.houseLocation}>{item.location}</Text>
-    </View>
+    </Pressable>
   );
 
   const renderSliderItem = ({ item }) => (
@@ -52,6 +58,7 @@ const Index = () => {
         <Text style={styles.listFeatures}>{item.HouseFeatures}</Text>
         <Text style={styles.listLocation}>{item.HouseLocation}</Text>
         <Text style={styles.listState}>{item.HouseState}</Text>
+        <Entypo name={item.star} size={20} color="black" />
         <Text style={styles.listPrice}>{item.Price}</Text>
         <TouchableOpacity style={styles.buyButton}>
           <Link href="" style={styles.buyButtonText}>
@@ -304,7 +311,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 5,
     marginTop: 10,
-    paddingVertical: 5,
+    paddingVertical: 10,
   },
   buyButtonText: {
     color: "white",
