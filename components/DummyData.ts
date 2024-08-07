@@ -31,7 +31,7 @@ export const HouseSliderData = [
       HouseFeatures: "4-Bed Room Duplex",
       HouseLocation: 'Block B Orange Island, Lekki',
       HouseState: 'Lagos State, Nigeria',
-      stars: 'star',
+      // stars: 'star',
       Price: '#150,000,000',
       btn: 'Buy now',
     },
@@ -40,7 +40,7 @@ export const HouseSliderData = [
       HouseFeatures: "4-Bed Room Duplex",
       HouseLocation: 'Block B Orange Island, Lekki',
       HouseState: 'Lagos State, Nigeria',
-      stars: 'star',
+      // stars: 'star',
       Price: '#150,000,000',
       btn: 'Buy now',
     },
@@ -49,7 +49,7 @@ export const HouseSliderData = [
       HouseFeatures: "4-Bed Room Duplex",
       HouseLocation: 'Block B Orange Island, Lekki',
       HouseState: 'Lagos State, Nigeria',
-      stars: 'star',
+      // stars: 'star',
       Price: '#150,000,000',
       btn: 'Buy now',
     },
@@ -94,4 +94,23 @@ export const HouseSliderData = [
       },
   ];
   
-  
+  export const LandInvestmentData = [
+    {
+      InvestmentImg: require('../assets/images/investmentImg.png'),
+      InvestmentLabel: '5 bedroom Duplex',
+      InvestmentLocation: 'Orange Estate, Lekki Lagos State',
+      InvestmentPrice: '#2,500,000',
+      InvestmentGain: '#3, 000, 000',
+      InvestmentProfit: '+5%',
+      InvestmentProfitNum: '+500,000',
+    },
+    {
+      InvestmentImg: require('../assets/images/investmentImg.png'),
+      InvestmentLabel: '5 bedroom Duplex',
+      InvestmentLocation: 'Orange Estate, Lekki Lagos State',
+      InvestmentPrice: '#2,500,000',
+      InvestmentGain: '#3, 000, 000',
+      InvestmentProfit: '+5%',
+      InvestmentProfitNum: '+500,000',
+    }
+  ]
