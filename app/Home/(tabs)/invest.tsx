@@ -238,30 +238,30 @@ const invest = () => {
         </View>
         <View style={{flexDirection: 'column', margin: 20}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-            <View>
-              <MaterialIcons name="analytics" size={24} color="black" />
+            <View style={{alignContent:'center'}}>
+              <MaterialIcons name="analytics" size={30} color="black" />
               <Text>Analytics</Text>
             </View>
-            <View>
-              <MaterialIcons name="analytics" size={24} color="black" />
+            <View style={{alignContent:'center'}}>
+              <MaterialIcons name="analytics" size={30} color="black" />
               <Text>Analytics</Text>
             </View>
-            <View>
-              <MaterialIcons name="analytics" size={24} color="black" />
+            <View style={{alignContent:'center'}}>
+              <MaterialIcons name="analytics" size={30} color="black" />
               <Text>Analytics</Text>
             </View>
-            <View>
-              <MaterialIcons name="analytics" size={24} color="black" />
+            <View style={{alignContent:'center'}}>
+              <MaterialIcons name="analytics" size={30} color="black" />
               <Text>Analytics</Text>
             </View>
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-            <View>
-              <MaterialIcons name="analytics" size={24} color="black" />
+          <View style={{flexDirection: 'row', gap: 10, margin: 20}}>
+            <View style={{alignContent:'center'}}>
+              <MaterialIcons name="analytics" size={30} color="black" />
               <Text>Analytics</Text>
             </View>
-            <View>
-              <MaterialIcons name="analytics" size={24} color="black" />
+            <View style={{alignContent:'center'}}>
+              <MaterialIcons name="analytics" size={30} color="black" />
               <Text>Analytics</Text>
             </View>
           </View>
